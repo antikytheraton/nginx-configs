@@ -178,8 +178,11 @@ http {
 
         root /sites/demo;
 
-        #try_files /thumb.png /;
-        try_files $uri /cat.png /greet;
+        try_files $uri /cat.png /greet @friendly_404;
+
+        location @friendly_404 {
+            return 404 "Sorry, that file coud not be found";
+        }
 
         location /greet {
             return 200 "Hello User";
@@ -187,3 +190,6 @@ http {
     }
 }
 ```
+
+curl -I http://104.248.18.107/nothing
+
