@@ -19,7 +19,7 @@ tar -zxvf nginx-1.15.9.tar.gz
 cd nginx-1.15.9
 ```
 
-### INstall dependencies
+### Install dependencies
 ```bash
 apt-get install build-essential
 apt-get install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
